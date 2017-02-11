@@ -41,6 +41,11 @@ var app = {
             splashElement.setAttribute('style', 'display:none;');
             var cityElement = document.querySelector('.city-info');
             cityElement.setAttribute('style', 'display:block;');
+
+responsiveVoice.OnVoiceReady = function() {
+  responsiveVoice.speak("Nuremberg for many people is still associated with its traditional gingerbread (Lebkuchen) products, sausages, and handmade toys. Pocket watches — Nuremberg eggs — were made here in the 16th century by Peter Henlein. In the 19th century Nuremberg became the \"industrial heart\" of Bavaria with companies such as Siemens and MAN establishing a strong base in the city. Nuremberg is still an important industrial centre with a strong standing in the markets of Central and Eastern Europe. Items manufactured in the area include electrical equipment, mechanical and optical products, motor vehicles, writing and drawing paraphernalia, stationery products, and printed materials. The city is also strong in the fields of automation, energy, and medical technology. Siemens is still the largest industrial employer in the Nuremberg region but a good third of German market research agencies are also located in the city. The Nuremberg International Toy Fair is the largest of its kind in the world. The city also hosts several specialist hi-tech fairs every year, attracting experts from every corner of the globe.");
+};
+
         });
     },
 
