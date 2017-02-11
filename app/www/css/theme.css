@@ -33,12 +33,12 @@
     border-radius: 50%;
     background: #d84315; 
     position: absolute; 
-    top:28%;
+    top:18%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     background-image: url("../img/Burg_Nuernberg_03.jpg");
-    background-size: 350px auto; 
+    background-size: 300px auto; 
     border: 5px solid #d84315; 
  
     }
