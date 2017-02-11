@@ -39,16 +39,14 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        console.log('Received Event: ' + id);
+
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-        console.log('API key: ' + Google_API_Key);
-        var geocoder = new google.maps.Geocoder;
     },
 
     updateLocation: function () {
@@ -68,7 +66,7 @@ var app = {
             console.log(position);
             this.latitude = position.coords.latitude;
             this.longitude = position.coords.longitude;
-            this.renderLocation();
+            this.loadCityData();
         };
 
         // onError Callback receives a PositionError object
@@ -76,7 +74,7 @@ var app = {
         var onError = function (error) {
             console.log('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
-            this.renderLocation();
+            this.loadCityData();
 
         };
 
@@ -86,6 +84,26 @@ var app = {
             { timeout: 30000, enableHighAccuracy: true }
         );
     },
+
+    loadCityData: function () {
+        //console.log('API key: ' + Google_API_Key);
+        var geocoder = new google.maps.Geocoder;
+        var latlng = {
+            lat: parseFloat(this.latitude),
+            lng: parseFloat(this.longitude)
+        };
+        geocoder.geocode({'location': latlng}, function (results, status) {
+            if (status === 'OK') {
+              if (results[1]) {
+console.log(results[1]);
+              } else {
+                console.log('No results found');
+              }
+            } else {
+              window.alert('Geocoder failed due to: ' + status);
+            }
+        });
+},
 
     renderLocation: function () {
             var parentElement = document.getElementById("current-location");
