@@ -35,6 +35,13 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
         this.updateLocation();
+
+        var splashElement = document.getElementById('animation_container');
+        splashElement.addEventListener('click', function () {
+            splashElement.setAttribute('style', 'display:none;');
+            var cityElement = document.querySelector('.city-info');
+            cityElement.setAttribute('style', 'display:block;');
+        });
     },
 
     // Update DOM on a Received Event

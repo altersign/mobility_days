@@ -33,7 +33,7 @@
         default-src 'self' data: gap:
             https://*.gstatic.com;
         script-src 'self' 'unsafe-inline' 'unsafe-eval'
-            https://*.gstatic.com https://*.googleapis.com;
+            https://*.gstatic.com https://*.googleapis.com https://code.createjs.com/;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
         media-src *">
 
@@ -57,7 +57,7 @@
                 <div>Longitude: <span class="longitude"></span> </div>
             </div>
         </div>
-        <div class="city-info">
+        <div class="city-info" style="display:none">
             <div id="bgimg">
                 <div id="layer">
                     
@@ -76,8 +76,11 @@
             </p>
         </div>
 
+    <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); background-image: url('/img/StarterScreen.png'); background-repeat: no-repeat; height:1024px;">
+	</div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/api_key.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+
     </body>
 </html>
