@@ -98,3 +98,13 @@ var app = {
 };
 
 app.initialize();
+
+
+var GoogleLocator = {
+    getCityByCoordinates: function () {
+    },
+
+    getPlacesInLocation: function () {
+    }
+};
+
