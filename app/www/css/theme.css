@@ -11,7 +11,7 @@
     position: relative;
     overflow:hidden; 
     background-size:cover;
-    background-image: url("Burg_Nuernberg_03.jpg");
+    background-image: url("../img/Burg_Nuernberg_03.jpg");
     background-position: 40% 40%; 
     background-color: blue; 
 }
@@ -37,7 +37,7 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    background-image: url("Burg_Nuernberg_03.jpg");
+    background-image: url("../img/Burg_Nuernberg_03.jpg");
     background-size: 350px auto; 
     border: 5px solid #d84315; 
  
