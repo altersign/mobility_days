@@ -28,26 +28,56 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <!-- meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;" -->
+        <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self' data: gap:
+            https://*.gstatic.com;
+        script-src 'self' 'unsafe-inline' 'unsafe-eval'
+            https://*.gstatic.com https://*.googleapis.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        media-src *">
+
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto:100,300,400" rel="stylesheet">
+        <!-- link rel="stylesheet" type="text/css" href="css/index.css" -->
+        <link rel="stylesheet" type="text/css" href="css/theme.css">
         <title>DeRail</title>
     </head>
     <body>
-        <div class="app">
+        <div class="app" style="display:none">
             <h1>DeRail</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
-            <div id="current-location" data-style="display:none">
+            <div id="current-location" style="display:none">
                 <div>Latitude: <span class="latitude"></span></div>
                 <div>Longitude: <span class="longitude"></span> </div>
             </div>
         </div>
+        <div class="city-info">
+            <div id="bgimg">
+                <div id="layer">
+                    
+                </div>
+            </div>
+            <div id="circle">
+                <div id="croppedImage">
+                    </div>
+            </div>
+            <h1> Nuremberg </h1>
+            <h2> Germany </h2>
+
+            <h3> Economy </h3>
+            <p> 
+                Nuremberg for many people is still associated with its traditional gingerbread (Lebkuchen) products, sausages, and handmade toys. Pocket watches — Nuremberg eggs — were made here in the 16th century by Peter Henlein. In the 19th century Nuremberg became the "industrial heart" of Bavaria with companies such as Siemens and MAN establishing a strong base in the city. Nuremberg is still an important industrial centre with a strong standing in the markets of Central and Eastern Europe. Items manufactured in the area include electrical equipment, mechanical and optical products, motor vehicles, writing and drawing paraphernalia, stationery products, and printed materials. The city is also strong in the fields of automation, energy, and medical technology. Siemens is still the largest industrial employer in the Nuremberg region but a good third of German market research agencies are also located in the city. The Nuremberg International Toy Fair is the largest of its kind in the world. The city also hosts several specialist hi-tech fairs every year, attracting experts from every corner of the globe.
+            </p>
+        </div>
+
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/api_key.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

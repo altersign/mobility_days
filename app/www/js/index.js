@@ -47,6 +47,8 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+        console.log('API key: ' + Google_API_Key);
+        var geocoder = new google.maps.Geocoder;
     },
 
     updateLocation: function () {
