@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head
+	<meta charset=utf-8 />
+	<title></title>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+
+
+    <!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+<script>
+
+/*function httpGet(theUrl)
+{
+     var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+}
+
+document.write(httpGet("http://en.wikipedia.org/w/api.php?format=xml&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=Yahoo|Google&redirects="));*/$
+
+//var url = 'http://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=Google&redirects=';
+var url = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&redirects=1&exintro=&explaintext=&titles=Stack%20Overflow";
+var div = document.getElementById("abc");
+request = new XMLHttpRequest();
+
+request.open('GET', url, true);
+request.onload = function() {
+     if (request.readyState === request.DONE) {
+        if (request.status === 200) {
+    data  = request.response;
+    console.log(request.response);
+    // responsiveVoice.speak(data);
+   // div.textContent = data;
+        }
+     }
+};
+request.send();
+
+responsiveVoice.OnVoiceReady = function() {
+  console.log("speech time?");
+  responsiveVoice.speak("hello world");
+  responsiveVoice.speak(data);
+
+//var xhr = new XMLHttpRequest();
+//xhr.open('GET', "http://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exlimit=max&explaintext&exintro&titles=Yahoo|Google&redirects=", true);
+//xhr.send();
+
+};
+
+</script>
+   <div id="abc">&nbsp;</div>
+   
+</body>
+</html>
+
+
+
+
+
+
